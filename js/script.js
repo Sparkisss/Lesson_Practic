@@ -59,9 +59,94 @@ genre.addEventListener('click', delElement);
 // console.log(document.body.childNodes);
 // console.log(document.body.firstChild);
 // console.log(filmsDB.firstElementChild);
-for (let node of filmsDB.childNodes) {
-    if (node.nodeName === '#text') {
-        continue;
+// for (let node of filmsDB.childNodes) {
+//     if (node.nodeName === '#text') {
+//         continue;
+//     }
+//     console.log(node);
+// }
+
+// let students = {
+//     js: [{
+//         name: 'John',
+//         progress: 100
+//     }, {
+//         name: 'Ivan',
+//         progress: 60
+//     }],
+
+//     html: {
+//         basic: [{
+//             name: 'Peter',
+//             progress: 20
+//         },{
+//             name: 'Ann',
+//             progress: 18
+//         }],
+
+//         pro: [{
+//             name: 'Sam',
+//             progress: 10
+//         }]
+//     }
+// };
+
+// function getTotalProgressByIteration(data) {
+//     let total = 0;
+//     let students = 0;
+
+//     for(let course of Object.values(data)) {
+//         if (Array.isArray(course)) {
+//             students += course.length;
+
+//             for (let i = 0; i < course.length; i++) {
+//                 total += course[i].progress;
+//             }
+//         }else {
+//             for(let subCourse of Object.values(course)) {
+//                 students += subCourse.length;
+
+//                 for (let i = 0; i < subCourse.length; i++) {
+//                     total += subCourse[i].progress;
+//                 }
+//             }
+//         }
+//     }
+
+//     return total / students;
+// }
+
+// console.log(getTotalProgressByIteration(students));
+
+function pow(x, n) {
+    if (n === 1) {
+        return x;
+    }else {
+        return x * pow(x, n - 1);
     }
-    console.log(node);
 }
+
+// const pr = pow(2, 6);
+// console.log(pr);
+
+
+function factorial(n) {
+    if (n % 1 !== 0) {
+        return "Число дробное";
+    }else if (n <= 0) {
+        return 1;
+    }else{
+        return n * factorial(n - 1);
+    }
+}
+
+let result = factorial(2.3);
+console.log(result);
+let result2 = factorial(0);
+console.log(result2);
+let result3 = factorial(4);
+console.log(result3);
+let result4 = factorial(-1);
+console.log(result4);
+let result5 = factorial(123.3);
+console.log(result5);
