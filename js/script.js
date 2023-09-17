@@ -4,7 +4,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const movieDB = {
         movies: [
-            "Логан",
+            "Ларри",
             "Лига справедливости",
             "Ла-ла лэнд",
             "Одержимость",
