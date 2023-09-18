@@ -18,7 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
           filmsDB = document.querySelector('.promo__interactive-list'),
           add = document.querySelector('form.add'),
           input  = add.querySelector('.adding__input'),
-          checkbox = add.querySelector('[type="checkbox"]');         
+          checkbox = add.querySelector('[type="checkbox"]'),
+          links = document.querySelectorAll('.promo__menu-item');         
     //////////////////////////////////////////////
     const delAdv = (arr) => {
         arr.forEach(item => {
@@ -77,8 +78,25 @@ document.addEventListener('DOMContentLoaded', () => {
         event.target.reset();
     });      
     
+
+    links.forEach(links => {
+        links.addEventListener('click', () => {
+            links.classList.toggle('promo__menu-item_active');
+        });
+    });
+    // links[0].addEventListener('click', () => {
+        
+    //         links[0].classList.toggle('promo__menu-item_active');
+        
+    // });
+    
+
+
+
+
     makeChanges();
     delAdv(advertisement);    
-    createMovieList(movieDB.movies, filmsDB);    
-       
+    createMovieList(movieDB.movies, filmsDB);
+    
+    
 });
