@@ -19,7 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
           add = document.querySelector('form.add'),
           input  = add.querySelector('.adding__input'),
           checkbox = add.querySelector('[type="checkbox"]'),
-          links = document.querySelectorAll('.promo__menu-item');         
+          links = document.querySelectorAll('.promo__menu-item'),
+          parents = document.querySelector('.promo__menu-list ul');         
     //////////////////////////////////////////////
     const delAdv = (arr) => {
         arr.forEach(item => {
@@ -79,21 +80,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });      
     
 
+    
+
+    parents.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (e.target && e.target.tagName === 'A') {
+            console.log('Sem');
+        }
+    });
+    
+    const a = document.createElement('a');
+    a.innerText = "Porno";
+    a.classList.add('promo__menu-item');
+    parents.append(a);
+
     links.forEach(links => {
-        links.addEventListener('click', () => {
+        links.addEventListener('click', () => {            
             links.classList.toggle('promo__menu-item_active');
         });
     });
-    // links[0].addEventListener('click', () => {
-        
-    //         links[0].classList.toggle('promo__menu-item_active');
-        
-    // });
     
-
-
-
-
     makeChanges();
     delAdv(advertisement);    
     createMovieList(movieDB.movies, filmsDB);
